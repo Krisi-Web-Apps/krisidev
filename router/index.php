@@ -10,12 +10,8 @@ $router->addRoute("/about", function () {
   view("about");
 });
 
-$router->addRoute("/locations", function () {
-  view("locations");
-});
-
-$router->addRoute("/gallery", function () {
-  view("gallery");
+$router->addRoute("/contacts", function () {
+  view("contacts");
 });
 
 $router->addRoute("/terms-of-use", function () {

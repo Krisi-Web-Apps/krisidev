@@ -1,6 +1,6 @@
 <?php
 $site_lang = "bg";
-$page_title = "За мен";
+$page_title = "Контакти";
 $page_desc = "Капибарата (Capybara) е най-голямата съществуваща животинска видове от семейство Caviidae, което включва и морски свинчета.";
 ?>
 <?php require "inc/header.php" ?>
