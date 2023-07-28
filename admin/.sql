@@ -1,4 +1,4 @@
-CREATE DATABASE IF NOT EXISTS `krisidev`;
+CREATE DATABASE IF NOT EXISTS `website-template-php`;
 
 -- create table users.
 CREATE TABLE IF NOT EXISTS `users` (
@@ -31,4 +31,14 @@ CREATE TABLE `pages` (
   `lang` VARCHAR(20) NOT NULL,
   PRIMARY KEY (`id`),
   UNIQUE (`slug`)
+) ENGINE = InnoDB;
+
+CREATE TABLE IF NOT EXISTS `manage_page_content` (
+  `id` INT NOT NULL AUTO_INCREMENT,
+  `name` VARCHAR(75) NOT NULL,
+  `text` LONGTEXT NOT NULL,
+  `comment` LONGTEXT NULL,
+  `page_id` INT NOT NULL,
+  PRIMARY KEY (`id`),
+  INDEX (`name`)
 ) ENGINE = InnoDB;

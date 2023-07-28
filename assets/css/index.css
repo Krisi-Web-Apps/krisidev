@@ -15,6 +15,10 @@ body {
   font-size: var(--font-size);
 }
 
+ul {
+  list-style-type: none;
+}
+
 h1, h2, h3, h4, h5, h6 {
   font-family: Arial, Helvetica, sans-serif;
   font-weight: bold;
@@ -47,6 +51,15 @@ h1, h2, h3, h4, h5, h6 {
 
 .btn.btn-primary:hover {
   background-color: var(--btn-hover-bg-color);
+}
+
+@media screen and (max-width: 600px) {
+  .btn.btn-primary {
+    padding: 0.5rem 1rem;
+  }
+  form * {
+    font-size: medium !important;
+  }
 }
 
 .text-bold {
