@@ -22,10 +22,13 @@ if ($_POST["type-form"] == "send_email") {
   $data = array(
     "fullname" => $fullname,
     "email" => $email,
-    "message" => $body,
+    "body" => $body,
     "subject" => $subject,
+    "phone" => $phone,
+    "city" => $city,
   );
-  // $statement = $db->insert("email_messages", $data);
+  
+  $statement = $db->insert("email_messages", $data);
   
   require "admin/mail/send-mail.php";
   $emailStatement = sendMail($subject, $body, $phone, $email, $city, $fullname, "krisidev", $_SERVER['HTTP_HOST']);

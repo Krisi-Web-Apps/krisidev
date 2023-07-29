@@ -42,3 +42,15 @@ CREATE TABLE IF NOT EXISTS `manage_page_content` (
   PRIMARY KEY (`id`),
   INDEX (`name`)
 ) ENGINE = InnoDB;
+
+CREATE TABLE IF NOT EXISTS `email_messages` (
+  `id` INT NOT NULL AUTO_INCREMENT,
+  `subject` VARCHAR(255) NOT NULL,
+  `body` TEXT NOT NULL,
+  `phone` VARCHAR(20) NOT NULL,
+  `email` VARCHAR(75) NOT NULL,
+  `city` VARCHAR(75) NOT NULL,
+  `fullname` VARCHAR(75) NOT NULL,
+  `created_at` DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  PRIMARY KEY (`id`)
+) ENGINE = InnoDB;
