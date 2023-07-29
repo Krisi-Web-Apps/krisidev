@@ -12,6 +12,10 @@
     </div>
     <hr />
     <div>
+      <a class="<?= url_match("/admin/email_messages") ? "active" : "" ?> d-block py-3 px-4 sidebar-item rounded my-2" href="/admin/email_messages">E-mail съобщения</a>
+    </div>
+    <hr />
+    <div>
       <a class="<?= url_match("/admin/settings") ? "active" : "" ?> d-block py-3 px-4 sidebar-item rounded my-2" href="/admin/settings">Настройки</a>
     </div>
     <div>

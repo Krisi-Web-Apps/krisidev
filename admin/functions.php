@@ -1,6 +1,7 @@
 <?php
 
-function url_match($url) {
+function url_match($url)
+{
   return $_SERVER["REQUEST_URI"] == $url;
 }
 
@@ -26,7 +27,8 @@ function generateToken()
   return $token;
 }
 
-function logout($userId = NULL) {
+function logout($userId = NULL)
+{
   if ($userId != NULL) {
     $_SESSION["worning_message"] = "Вие вече сте изван системата.";
     $_SESSION["user_id"] = $userId;
@@ -39,7 +41,8 @@ function logout($userId = NULL) {
   unsetSession();
 }
 
-function isAuthenticated() {
+function isAuthenticated()
+{
   global $db;
 
   if (isset($_SESSION["user_id"]) == FALSE) {
@@ -53,7 +56,8 @@ function isAuthenticated() {
   return $session != FALSE;
 }
 
-function isAdmin() {
+function isAdmin()
+{
   global $db;
 
   if (isset($_SESSION["user_id"]) == FALSE) {
@@ -68,16 +72,56 @@ function isAdmin() {
   return $user != FALSE;
 }
 
-function setSession($auth) {
+function setSession($auth)
+{
   $_SESSION["user_id"] = $auth["user_id"];
   $_SESSION["user_password"] = $auth["user_password"];
   $_SESSION["token"] = $auth["token"];
   $_SESSION["role_as"] = $auth["role_as"];
 }
 
-function unsetSession() {
+function unsetSession()
+{
   unset($_SESSION["user_id"]);
   unset($_SESSION["user_password"]);
   unset($_SESSION["token"]);
   unset($_SESSION["role_as"]);
+}
+
+function getTimeElapsed($startDateString, $timeZone = 'Europe/Sofia')
+{
+  $startDate = DateTime::createFromFormat('Y-m-d H:i:s', $startDateString, new DateTimeZone($timeZone));
+  if (!$startDate) {
+    return "Невалидна дата и час: " . $startDateString;
+  }
+
+  $now = new DateTime('now', new DateTimeZone($timeZone));
+
+  $interval = $now->diff($startDate);
+
+  $years = $interval->format('%y');
+  $months = $interval->format('%m');
+  $days = $interval->format('%a');
+  $hours = $interval->format('%h');
+  $minutes = $interval->format('%i');
+  $seconds = $interval->format('%s');
+
+  if ($years > 0) {
+    return "Преди " . $interval->y . " години";
+  } elseif ($months > 0) {
+    return "Преди " . $months . " месеца";
+  } elseif ($days > 0) {
+    return "Преди " . $days . " дни";
+  } elseif ($hours > 0) {
+    return "Преди " . $hours . " часа";
+  } elseif ($minutes > 0) {
+    return "Преди " . $minutes . " минути";
+  } else {
+    return "Преди " . $seconds . " секунди";
+  }
+}
+
+function formatCreatedAt($date)
+{
+  return date("l, j F Y", strtotime($date));
 }
