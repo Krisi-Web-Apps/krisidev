@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="bg">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>{{subject}}</title>
+    <style>
+      * {
+        font-family: Verdana, Geneva, Tahoma, sans-serif;
+      }
+      h1 {
+        text-align: center;
+      }
+      ul li {
+        margin-bottom: 10px;
+      }
+      ul li span:first-child {
+        font-weight: bold;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>{{subject}}</h1>
+    <p>{{body}}</p>
+    <ul>
+      <li>
+        <span>Телефон:</span>
+        <a title="Обаждане сега!" href="tel:{{phone}}">{{phone}}</a>
+      </li>
+      <li>
+        <span>E-mail:</span>
+        <a title="Изпращане на e-mail" href="{{email}}">{{email}}</a>
+      </li>
+      <li>
+        <span>Град:</span>
+        <span>{{city}}</span>
+      </li>
+      <li>
+        <span>Име и фамилия:</span>
+        <span>{{fullname}}</span>
+      </li>
+    </ul>
+    <p>
+      <span>Този e-mail беше изпратен от формата за контакти в сайта:</span>
+      <a title="Посетете връзката" href="{{website_url}}">{{website_title}}</a>
+    </p>
+  </body>
+</html>

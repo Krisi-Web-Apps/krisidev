@@ -8,6 +8,9 @@ global $db;
 $params = array(":slug" => "contacts");
 $page = $db->select("SELECT * FROM `pages` WHERE slug = :slug", $params)[0];
 
+$params = array(":page_id" => $page["id"]);
+$pageContents = $db->select("SELECT * FROM `manage_page_content` WHERE page_id = :page_id", $params);
+
 $site_lang = $page["lang"];
 $page_title = $page["meta_title"];
 $page_desc = $page["meta_description"];
@@ -23,19 +26,11 @@ $meta_keywords = $page["meta_keywords"];
   <div class="bg-light-gray p-lg-5 p-md-4">
     <div class="container">
       <div class="text-center">
-        <h1>Контакти</h1>
-        <p>
-          Ако имате нужда от помощ при изработката на уеб сайт, онлайн магазин или създаването на уеб приложение, не се
-          колебайте да се свържете с мен. Ще се радвам да ви помогна!
-        </p>
-        <p>
-          Със сърдечен интерес към вашите нужди, аз съм на разположение да отговоря на всякакви въпроси или запитвания,
-          които имате. Не се колебайте да ме потърсите по телефона или да ми изпратите съобщение чрез контактната форма
-          по-долу. Ще се постараем да отговоря възможно най-скоро и да ви предоставим необходимата помощ и информация.
-        </p>
+        <h1><?= $page["title"] ?></h1>
+        <?= html_entity_decode($pageContents[0]["text"]) ?>
       </div>
       <div>
-        <h2 class="text-center mb-4">Информация за контакти</h2>
+        <?= html_entity_decode($pageContents[1]["text"]) ?>
         <ul class="row p-0">
           <li class="col-12 col-md-6 col-lg-4 mb-4">
             <div class="bg-white p-4 rounded text-center">
@@ -73,8 +68,16 @@ $meta_keywords = $page["meta_keywords"];
           <input type="text" class="form-control" id="fullname" name="fullname" placeholder="Пример: Кристиан Костадинов">
         </div>
         <div class="form-group mb-4">
+          <label class="form-label" for="city">Град</label>
+          <input type="text" class="form-control" id="city" name="city" placeholder="Пример: Дупница">
+        </div>
+        <div class="form-group mb-4">
+          <label class="form-label" for="phone">Телефон</label>
+          <input type="tel" class="form-control" id="phone" name="phone" placeholder="Пример: 0899 718 824">
+        </div>
+        <div class="form-group mb-4">
           <label class="form-label" for="email">E-mail</label>
-          <input type="email" class="form-control" id="email" name="email" placeholder="Пример: krisi.199898@gmail.com">
+          <input type="email" class="form-control" id="email" name="email" placeholder="Пример: mail@krisidev.com / krisi.199898@gmail.com">
         </div>
         <div class="form-group mb-4">
           <label class="form-label" for="subject">Тема</label>
