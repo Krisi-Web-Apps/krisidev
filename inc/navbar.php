@@ -13,6 +13,9 @@
           <a class="nav-link" aria-current="page" href="/about">За мен</a>
         </li>
         <li class="nav-item">
+          <a class="nav-link" aria-current="page" href="/faq">FAQ</a>
+        </li>
+        <li class="nav-item">
           <a class="nav-link" aria-current="page" href="/contacts">Контакти</a>
         </li>
       </ul>

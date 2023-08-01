@@ -14,12 +14,20 @@ $router->addRoute("/contacts", function () {
   view("contacts");
 });
 
+$router->addRoute("/faq", function () {
+  view("faq");
+});
+
 $router->addRoute("/terms-of-use", function () {
-  view("terms-of-use");
+  view("privacy/terms-of-use");
 });
 
 $router->addRoute("/privacy-policy", function () {
-  view("privacy-policy");
+  view("privacy/privacy-policy");
+});
+
+$router->addRoute("/cookie-policy", function () {
+  view("privacy/cookie-policy");
 });
 
 require "auth/router.php";

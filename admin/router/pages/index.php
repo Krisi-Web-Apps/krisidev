@@ -1,7 +1,7 @@
 <?php
 
 global $BASE_PATH;
-$router->addRoute("$BASE_PATH/pages", function () {
+$router->addRoute("$BASE_PATH/pages/", function () {
   view("pages/index");
 });
 

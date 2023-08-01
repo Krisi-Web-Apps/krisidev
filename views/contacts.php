@@ -20,17 +20,25 @@ $meta_keywords = $page["meta_keywords"];
 
 <header>
   <?php require "inc/navbar.php" ?>
+  <div class="container">
+    <div class="bg-light-gray text-center p-lg-5 p-md-4 p-sm-3 p-2">
+      <h1 class="h1 mb-0">
+        <?= $page["title"] ?>
+      </h1>
+    </div>
+    <div class="text-center">
+      <?= html_entity_decode($pageContents[0]["text"]) ?>
+    </div>
+  </div>
 </header>
 
 <main>
-  <div class="bg-light-gray p-lg-5 p-md-4">
+  <div class="bg-light-gray p-lg-5 p-md-4 p-sm-3 p-2">
     <div class="container">
-      <div class="text-center">
-        <h1><?= $page["title"] ?></h1>
-        <?= html_entity_decode($pageContents[0]["text"]) ?>
-      </div>
       <div>
-        <?= html_entity_decode($pageContents[1]["text"]) ?>
+        <div class="py-4">
+          <?= html_entity_decode($pageContents[1]["text"]) ?>
+        </div>
         <ul class="row p-0">
           <li class="col-12 col-md-6 col-lg-4 mb-4">
             <div class="bg-white p-4 rounded text-center">
@@ -65,7 +73,8 @@ $meta_keywords = $page["meta_keywords"];
       <form method="post" class="p-lg-5 p-md-4 p-3 bg-white rounded">
         <div class="form-group mb-4">
           <label class="form-label" for="fullname">Име и фамилия</label>
-          <input type="text" class="form-control" id="fullname" name="fullname" placeholder="Пример: Кристиан Костадинов">
+          <input type="text" class="form-control" id="fullname" name="fullname"
+            placeholder="Пример: Кристиан Костадинов">
         </div>
         <div class="form-group mb-4">
           <label class="form-label" for="city">Град</label>
@@ -77,18 +86,22 @@ $meta_keywords = $page["meta_keywords"];
         </div>
         <div class="form-group mb-4">
           <label class="form-label" for="email">E-mail</label>
-          <input type="email" class="form-control" id="email" name="email" placeholder="Пример: mail@krisidev.com / krisi.199898@gmail.com">
+          <input type="email" class="form-control" id="email" name="email"
+            placeholder="Пример: mail@krisidev.com / krisi.199898@gmail.com">
         </div>
         <div class="form-group mb-4">
           <label class="form-label" for="subject">Тема</label>
-          <input type="text" class="form-control" id="subject" name="subject" placeholder="Пример: Изработка на уеб сайт">
+          <input type="text" class="form-control" id="subject" name="subject"
+            placeholder="Пример: Изработка на уеб сайт">
         </div>
         <div class="form-group mb-4">
           <label class="form-label" for="body">Съобщение</label>
-          <textarea class="form-control" id="body" name="body" rows="10" placeholder="Опишете вашата идея тук..."></textarea>
+          <textarea class="form-control" id="body" name="body" rows="10"
+            placeholder="Опишете вашата идея тук..."></textarea>
         </div>
         <div class="text-center">
-          <button type="submit" name="type-form" value="send_email" title="Изпращане на съобщението" class="btn btn-primary">Изпращане на съобщението</button>
+          <button type="submit" name="type-form" value="send_email" title="Изпращане на съобщението"
+            class="btn btn-primary">Изпращане на съобщението</button>
         </div>
       </form>
     </div>

@@ -62,7 +62,7 @@ if ($_POST["type-form"] == "login") {
   global $db;
 
   $params = array(":email" => $email);
-  $user = $db->select("SELECT id, email, `password` FROM `users` WHERE email = :email;", $params);
+  $user = $db->select("SELECT * FROM `users` WHERE email = :email;", $params);
 
   if ($user == FALSE) {
     $_SESSION["error_message"] = "E-mail адреса или паролата са невавидни.";
@@ -97,6 +97,7 @@ if ($_POST["type-form"] == "login") {
   afterLogin(array(
     "user_id" => $user[0]["id"],
     "user_password" => $user[0]["password"],
+    "role_as" => $user[0]["role_as"],
     "token" => $token,
   ));
 }

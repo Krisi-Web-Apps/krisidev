@@ -16,25 +16,27 @@ $meta_keywords = $page["meta_keywords"];
 
 <header>
   <?php require "inc/navbar.php" ?>
-  <div class="bg-light-gray text-center p-5">
-    <div class="container">
-      <h1 class="h1"><?= $page["title"] ?></h1>
-      <?= html_entity_decode($pageContents[0]["text"]) ?>
+  <div class="container text-center">
+    <div class="bg-light-gray p-lg-5 p-md-4 p-sm-3 p-2">
+      <h1 class="h1 mb-0">
+        <?= $page["title"] ?>
+      </h1>
     </div>
+    <?= html_entity_decode($pageContents[0]["text"]) ?>
   </div>
 </header>
 
 <main>
   <div class="container">
     <section>
-      <div class="text-center">
-        <button class="btn btn-primary mb-4 w-100" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvas-section-1"
-        aria-controls="offcanvas-section-1">Мoйте умения</button>
+      <div class="text-center p-lg-5 p-md-4 p-sm-3 p-2">
+        <button class="btn btn-primary mb-4 w-100" type="button" data-bs-toggle="offcanvas"
+          data-bs-target="#offcanvas-section-1" aria-controls="offcanvas-section-1">Мoите умения</button>
       </div>
       <div class="offcanvas offcanvas-start" data-bs-scroll="true" tabindex="-1" id="offcanvas-section-1"
         aria-labelledby="offcanvas-section-1Label">
         <div class="offcanvas-header">
-          <h5 class="offcanvas-title" id="offcanvas-section-1Label">Мoйте умения</h5>
+          <h5 class="offcanvas-title" id="offcanvas-section-1Label">Мoите умения</h5>
           <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
         </div>
         <div class="offcanvas-body">
