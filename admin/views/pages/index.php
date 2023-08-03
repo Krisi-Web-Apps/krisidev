@@ -27,7 +27,7 @@ $pages = $db->select("SELECT * FROM `pages`;");
       <?php endif; ?>
     </h1>
     <?php if ($_SESSION["role_as"] == "admin"): ?>
-      <a class="btn btn-primary d-flex align-items-center gap-2" href="create">
+      <a class="btn btn-primary d-flex align-items-center gap-2" href="pages/create">
         <i class="fas fa-plus"></i>
         <span>Създаване на нова</span>
       </a>

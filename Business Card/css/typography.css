@@ -1,0 +1,12 @@
+body {
+  font-size: min(max(16px, 4vw), 20px);
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-size: min(max(24px, 4vw), 32px);
+  line-height: 1;
+}
+
+a {
+  text-decoration: none;
+}

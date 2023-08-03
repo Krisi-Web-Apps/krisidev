@@ -11,7 +11,7 @@
             <ul class="px-0">
               <li class="mb-2">
                 <i class="text-white fas fa-arrow-right"></i>
-                <a href="/" class="text-white text-decoration-none">Изработка на сайт</a>
+                <a href="/services/business-card" class="text-white text-decoration-none">Изработка на сайт визитка</a>
               </li>
               <li class="mb-2">
                 <i class="text-white fas fa-arrow-right"></i>
