@@ -42,7 +42,7 @@ $page_title = "Редактиране на страница";
       </div>
       <div class="mb-3">
         <label for="meta_description" class="form-label">Мета описание</label>
-        <textarea class="form-control" name="meta_description" id="meta_description"
+        <textarea class="textarea form-control" name="meta_description" id="meta_description"
           rows="4"><?= $page["meta_description"] ? $page["meta_description"] : null ?></textarea>
       </div>
       <div class="mb-3">

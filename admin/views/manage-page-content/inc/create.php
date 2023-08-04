@@ -16,11 +16,11 @@ $comment = isset($_POST["comment"]) ? $_POST["comment"] : null;
   </div>
   <div class="mb-3">
     <label for="text" class="form-label">Текст *</label>
-    <textarea name="text" class="form-control" id="text" rows="10"><?= $text ?></textarea>
+    <textarea name="text" class="textarea form-control" id="text" rows="10"><?= $text ?></textarea>
   </div>
   <div class="mb-3">
     <label for="comment" class="form-label">Коментар</label>
-    <textarea name="comment" class="form-control" id="text" rows="4"><?= $comment ?></textarea>
+    <textarea name="comment" class="textarea form-control" id="text" rows="4"><?= $comment ?></textarea>
   </div>
   <input type="hidden" name="page_id" value="<?= $pageId ?>">
   <p class="text-muted">Полетата със '*' за зъдължителни!</p>

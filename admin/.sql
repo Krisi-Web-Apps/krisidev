@@ -54,3 +54,15 @@ CREATE TABLE IF NOT EXISTS `email_messages` (
   `created_at` DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP,
   PRIMARY KEY (`id`)
 ) ENGINE = InnoDB;
+
+CREATE TABLE `layouts` (
+  `id` INT NOT NULL AUTO_INCREMENT,
+  `slug` VARCHAR(75) NOT NULL,
+  `title` VARCHAR(75) NOT NULL,
+  `location` VARCHAR(75) NOT NULL,
+  `content` TEXT NOT NULL,
+  PRIMARY KEY (`id`),
+  UNIQUE (`slug`),
+  UNIQUE (`title`),
+  UNIQUE (`location`)
+) ENGINE = InnoDB;

@@ -11,6 +11,7 @@ $router->addRoute("$BASE_PATH/", function () {
 });
 
 require "pages/index.php";
+require "layouts/index.php";
 require "users/index.php";
 require "settings/index.php";
 require "manage-page-content/index.php";

@@ -30,7 +30,7 @@ $page_title = "Създаване на страница";
       </div>
       <div class="mb-3">
         <label for="meta_description" class="form-label">Мета описание</label>
-        <textarea class="form-control" name="meta_description" id="meta_description" rows="4"></textarea>
+        <textarea class="textarea form-control" name="meta_description" id="meta_description" rows="4"></textarea>
       </div>
       <div class="mb-3">
         <label for="meta_keywords" class="form-label">Мета ключови думи</label>

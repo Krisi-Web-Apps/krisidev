@@ -40,7 +40,7 @@ function deletePageContent(event) {
 }
 
 tinymce.init({
-  selector: 'textarea',
+  selector: '.textarea',
   plugins: 'textcolor image lists code advlist', // Добавяме "advlist" плъгина
   toolbar: 'undo redo | bold italic underline | forecolor backcolor | alignleft aligncenter alignright alignjustify | bullist numlist | image code | formatselect', // Добавяме "formatselect" инструмента за заглавия
   branding: false,
